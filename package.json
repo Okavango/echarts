@@ -1,6 +1,6 @@
 {
-  "name": "echarts-special",
-  "version": "5.4.3",
+  "name": "@okavango/echarts-special",
+  "version": "1.0.0",
   "description": "Apache ECharts is a powerful, interactive charting and data visualization library for browser",
   "license": "Apache-2.0",
   "keywords": [
@@ -101,5 +101,10 @@
     "terser": "^5.16.1",
     "ts-jest": "^26.4.3",
     "typescript": "4.4.3"
-  }
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "author": "Okavango"
 }
