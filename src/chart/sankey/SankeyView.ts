@@ -354,6 +354,10 @@ class SankeyView extends ChartView {
  * @param edge current curve data
  */
 function applyCurveStyle(curveProps: PathStyleProps, orient: 'horizontal' | 'vertical', edge: GraphEdge) {
+    if (curveProps.fill instanceof Function) {
+        // Let edge color be a function
+        curveProps.fill = (curveProps.fill as (data:any) => string)(edge.data);
+    }
     switch (curveProps.fill) {
         case 'source':
             curveProps.fill = edge.node1.getVisual('color');

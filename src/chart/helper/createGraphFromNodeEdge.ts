@@ -57,7 +57,7 @@ export default function createGraphFromNodeEdge(
         const source = link.source;
         const target = link.target;
         // addEdge may fail when source or target not exists
-        if (graph.addEdge(source, target, linkCount)) {
+        if (graph.addEdge(source, target, linkCount, link.data)) {
             validEdges.push(link);
             linkNameList.push(zrUtil.retrieve(
                 convertOptionIdName(link.id, null),

@@ -105,7 +105,7 @@ class Graph {
     /**
      * Add a new edge
      */
-    addEdge(n1: GraphNode | number | string, n2: GraphNode | number | string, dataIndex?: number) {
+    addEdge(n1: GraphNode | number | string, n2: GraphNode | number | string, dataIndex?: number, data?: any) {
         const nodesMap = this._nodesMap;
         const edgesMap = this._edgesMap;
 
@@ -129,7 +129,7 @@ class Graph {
 
         const key = n1.id + '-' + n2.id;
 
-        const edge = new GraphEdge(n1, n2, dataIndex);
+        const edge = new GraphEdge(n1, n2, dataIndex, data);
         edge.hostGraph = this;
 
         if (this._directed) {
@@ -447,12 +447,15 @@ class GraphEdge {
 
     dataIndex: number = -1;
 
+    data?: any;      // arb user data
+
     hostGraph: Graph;
 
-    constructor(n1: GraphNode, n2: GraphNode, dataIndex?: number) {
+    constructor(n1: GraphNode, n2: GraphNode, dataIndex?: number, data?: any) {
         this.node1 = n1;
         this.node2 = n2;
         this.dataIndex = dataIndex == null ? -1 : dataIndex;
+        this.data = data;
     }
 
     getModel<T = unknown>(): Model<T>;

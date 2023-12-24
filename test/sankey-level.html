@@ -84,7 +84,7 @@ under the License.
                                     color: '#ccebc5'
                                 },
                                 lineStyle: {
-                                    color: 'source',
+                                    color: (data) => data < 300 ? '#100c2a' : 'pink',
                                     opacity: 0.6
                                 }
                             }, {

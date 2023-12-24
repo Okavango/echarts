@@ -636,6 +636,11 @@ export interface GraphEdgeItemObject<
      * Name or index of target node.
      */
     target?: string | number
+
+    /**
+     * Arbitrary user data
+     */
+    data?: any
 }
 export type OptionDataValue = string | number | Date | null | undefined;
 
